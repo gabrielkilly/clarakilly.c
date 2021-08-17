@@ -1,14 +1,17 @@
-import Carousel, { Dots, slidesToShowPlugin } from '@brainhubeu/react-carousel'
+import Carousel, { arrowsPlugin, Dots, slidesToShowPlugin } from '@brainhubeu/react-carousel'
 import '@brainhubeu/react-carousel/lib/style.css'
-import image1 from './images/img1.jpg'
-import image2 from './images/img2.jpg'
-import image3 from './images/img3.jpg'
-import image4 from './images/img4.jpg'
+import image1 from './resources/img1.jpg'
+import image2 from './resources/img2.jpg'
+import image3 from './resources/img3.jpg'
+import image4 from './resources/img4.jpg'
+import leftArrowIcon from './resources/left-arrow-long-icon.svg'
+import rightArrowIcon from './resources/right-arrow-long-icon.svg'
+
 import './HomePageStyles.css'
 import { useState } from 'react'
 
 const HeadshotsCarousel = () => {
-    const [currentIndex, setCurrentIndex] = useState(0)
+    const [currentIndex, setCurrentIndex] = useState(1)
     const slides = [
         <img src={image1} alt="Headshot 1 Of Clara"/>,
         <img src={image2} alt="Headshot 2 Of Clara"/>,
@@ -23,18 +26,30 @@ const HeadshotsCarousel = () => {
         <Carousel
             plugins={[
                 'centered',
-                'infinite',
                 {
-                resolve: slidesToShowPlugin,
-                options: {
-                numberOfSlides: 2,
+                    resolve: slidesToShowPlugin,
+                    options: {
+                        numberOfSlides: 3,
+                    }
                 },
-                },
+                {
+                    resolve: arrowsPlugin,
+                    options: {
+                        arrowLeft: <input type="image" className="arrow arrow-left" src={leftArrowIcon}/>,
+                        arrowRight: <input type="image" className="arrow arrow-right" src={rightArrowIcon}/>,
+                        addArrowClickHandler: true
+                    }
+                }
             ]}  
+            value={currentIndex}
             slides={slides}
-            >
-            { slides }
-        </Carousel>
+            onChange={onIndexChanged}
+           />
+        <Dots 
+            value={currentIndex} 
+            onChange={onIndexChanged} 
+            number={slides.length} 
+            />
     </div>
 }
 

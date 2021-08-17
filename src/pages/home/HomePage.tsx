@@ -1,20 +1,20 @@
 import './HomePageStyles.css'
 import { Fragment } from 'react'
 import HeadshotsCarousel from './HeadshotsCarousel';
-import { ReactComponent as InstagramIcon } from './images/instagram.svg'
-import { ReactComponent as TwitterIcon } from './images/twitter.svg'
-import { ReactComponent as YoutubeIcon } from './images/youtube.svg'
-import backgroundImage from './images/background-ocean.jpeg'
+import { ReactComponent as InstagramIcon } from './resources/instagram.svg'
+import { ReactComponent as TwitterIcon } from './resources/twitter.svg'
+import { ReactComponent as YoutubeIcon } from './resources/youtube.svg'
+import bg from './resources/bg-green.jpeg'
 
 const Hero = () => 
-    <div className="hero">
+    <div className="hero" style={{backgroundImage:`linear-gradient(rgba(66,75,43,0.5) 100%, rgba(66,75,43,0.5) 100%), url(${bg}`}}>
         <Navigation/>
         <main>
             <h2>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero necessitatibus fugiat ullam optio doloribus, beatae, earum facilis corrupti voluptas consequatur. Unde porro architecto aliquid nobis culpa. Possimus, illo explicabo!
+                A recent graduate of AMDA, I'm an actress looking for both theater and film roles in New York City. 
             </h2>
-            <a href="" target="_blank">Resume CV</a>
-            <a href="" target="_blank">Reach Out</a>
+            <a href={process.env.PUBLIC_URL + '/killy-clara-resume.pdf'} target="_blank">Resume</a>
+            <a href="mailto:clara.killy@yahoo.com" target="_blank">Contact Me</a>
         </main>
     </div>
 
@@ -24,9 +24,9 @@ const Navigation = () =>
             <li><h1>Clara Killy</h1></li>
             <li>
                 <div>
-                    <span><InstagramIcon /></span>
-                    <span><TwitterIcon /></span>
-                    <span><YoutubeIcon/></span>
+                    <a href="https://twitter.com/clarakilly" target="_blank"><span><InstagramIcon /></span></a>
+                    <a href="https://www.instagram.com/clarakilly" target="_blank"><span><TwitterIcon /></span></a>
+                    {/* <a href="" ><span><YoutubeIcon/></span></a> */}
                 </div>
             </li>
         </ul>

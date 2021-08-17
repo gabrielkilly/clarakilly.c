@@ -1,9 +1,9 @@
 .hero {
-    background-color: #003d49;
+    background-size: cover;
     padding-left: 1rem;
     padding-right: 1rem;
     color: white;
-    height: 100vh;
+    height: auto;
 }
 
 .hero h1 {
@@ -31,18 +31,18 @@
 }
 
 .hero nav li span {
-    padding: 0 .2rem;
+    padding: 0 .4rem;
 }
 
 /* Main Content */
 .hero main {
     width: 40rem;
     line-height: 1.5;
-    position: absolute;
-    top: 60vh;
+    padding: 5rem 0;
 }
  .hero main a {
      margin-top: 1rem;
+     font-size: 1.25rem;
      display: inline-block;
      color: inherit;
  }
@@ -53,9 +53,28 @@
 
 /* Carousel */
 .carousel-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 100vh;
-    background-color: beige
+    background-color: white;
 }
 .carousel-container img {
-    height: 100vh;
+    height: 70vh;
+}
+
+.carousel-container .arrow {
+    height: 1rem;
+}
+
+.carousel-container .arrow-right {
+    padding-right: 1rem;
+}
+
+.carousel-container .arrow-left {
+    padding-left: 1rem;
+}
+
+.BrainhubCarousel__dot {
+    margin-top: 5vh;
 }
