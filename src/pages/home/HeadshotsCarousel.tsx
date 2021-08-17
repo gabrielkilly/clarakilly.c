@@ -40,7 +40,19 @@ const HeadshotsCarousel = () => {
                         addArrowClickHandler: true
                     }
                 }
-            ]}  
+            ]}
+            breakpoints={{
+                920: {
+                    plugins: [
+                        {
+                          resolve: slidesToShowPlugin,
+                          options: {
+                            numberOfSlides: 1
+                          }
+                        }
+                      ]
+                }
+            }}  
             value={currentIndex}
             slides={slides}
             onChange={onIndexChanged}

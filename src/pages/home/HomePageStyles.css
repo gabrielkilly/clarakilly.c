@@ -36,7 +36,7 @@
 
 /* Main Content */
 .hero main {
-    width: 40rem;
+    max-width: 40rem;
     line-height: 1.5;
     padding: 5rem 0;
 }
