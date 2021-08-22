@@ -6,8 +6,9 @@ import { ReactComponent as TwitterIcon } from './resources/twitter.svg'
 import { ReactComponent as YoutubeIcon } from './resources/youtube.svg'
 import bg from './resources/bg-green.jpeg'
 
+//style={{backgroundImage:`linear-gradient(rgba(66,75,43,0.5) 100%, rgba(66,75,43,0.5) 100%), url(${bg}`}}
 const Hero = () => 
-    <div className="hero" style={{backgroundImage:`linear-gradient(rgba(66,75,43,0.5) 100%, rgba(66,75,43,0.5) 100%), url(${bg}`}}>
+    <div className="hero" >
         <Navigation/>
         <main>
             <h2>
