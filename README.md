@@ -9,5 +9,5 @@ The site was built using React with Typescript. It was built off of [Create Reac
 
 ## Hosting
 
-The website can be found at [clarakilly.com](https://clarakilly.com). The domain is ownber by Google. 
+The website can be found at [clarakilly.com](https://clarakilly.com). The domain was gotten through Google Domains. 
 The site is hosted using [Render](https://render.com).
