@@ -14,7 +14,6 @@ import { useState } from 'react'
 const isMobile = () => (window.innerWidth > 920) ? false : true
 
 const HeadshotsCarousel = () => { 
-    console.log(window.innerWidth)
     const [currentIndex, setCurrentIndex] = useState(isMobile() ? 0 : 1)
     const slides = [
         <img src={image1} alt="Headshot 1 Of Clara"/>,
@@ -23,7 +22,7 @@ const HeadshotsCarousel = () => {
         <img src={image4} alt="Headshot 4 Of Clara"/>
     ]
     const onIndexChanged = (index: number) => {
-        if (index + 1 <= slides.length && index >= 0) {
+        if ((index + 1 <= slides.length && index >= 0) || isMobile()) {
             setCurrentIndex(index)
         }
     }
@@ -64,7 +63,8 @@ const HeadshotsCarousel = () => {
                                 arrowRight: <input type="image" className="arrow arrow-right" src={rightArrowIcon}/>,
                                 addArrowClickHandler: true
                             }
-                        }
+                        },
+                        'infinite'
                       ]
                 }
             }}  
@@ -72,7 +72,7 @@ const HeadshotsCarousel = () => {
             slides={slides}
             onChange={onIndexChanged}
             animationSpeed={isMobile() ? 0 : 500}
-            draggable={!isMobile()}
+            draggable={!isMobile()}     
            />
         <Dots 
             value={currentIndex} 
