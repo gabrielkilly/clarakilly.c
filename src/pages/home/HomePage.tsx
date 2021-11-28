@@ -25,8 +25,8 @@ const Navigation = () =>
             <li><h1>Clara Killy</h1></li>
             <li>
                 <div>
-                    <a href="https://twitter.com/clarakilly" target="_blank"><span><InstagramIcon /></span></a>
-                    <a href="https://www.instagram.com/clarakilly" target="_blank"><span><TwitterIcon /></span></a>
+                    <a href="https://twitter.com/clarakilly" target="_blank"><span><TwitterIcon /></span></a>
+                    <a href="https://www.instagram.com/clarakilly" target="_blank"><span><InstagramIcon /></span></a>
                     {/* <a href="" ><span><YoutubeIcon/></span></a> */}
                 </div>
             </li>
